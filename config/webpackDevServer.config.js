@@ -89,7 +89,7 @@ module.exports = function(proxy, allowedHost) {
       '/api':{
          target: 'http://news-at.zhihu.com/',
          secure: false,
-         changeOrigin: true;
+         changeOrigin: true
       }
     },
     before(app) {

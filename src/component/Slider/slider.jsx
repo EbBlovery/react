@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
 import './slider.less';
+
 
 class Slider extends Component {
 	constructor(props){
          super(props)
 	}
 	render(){
+		 var showclass = classNames({
+		 	"slider":true,
+		 	"show":this.props.isShow
+		 })
          return (
-             <div className="slider" className={this.props.isShow?'show':''}>
-             	<div>xxxx</div>
+             <div className={showclass} >
+             	<div className="info-bar">asdasd
+             		<img src={'../../static/logo.png'}/>
+             	</div>
              	<div>
              		<ul>
              			<li>
