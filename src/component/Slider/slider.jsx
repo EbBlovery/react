@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import './slider.less';
 
@@ -9,7 +10,7 @@ class Slider extends Component {
 	}
 	render(){
          return (
-             <div className="slider">
+             <div className="slider" className={this.props.isShow?'show':''}>
              	<div>xxxx</div>
              	<div>
              		<ul>
@@ -26,4 +27,10 @@ class Slider extends Component {
 	}
 }
 
-export default Slider;
+function mapStateToProps(state){
+    return {
+    	isShow:state.control.nowStatus
+    }
+}
+
+export default connect(mapStateToProps,null)(Slider);

@@ -36,7 +36,7 @@ class Index extends Component {
 
 function mapStateToProps(state){
     return {
-    	nowStatus:state.nowStatus
+    	nowStatus:state.control.nowStatus
     }
 }
 
