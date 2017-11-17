@@ -20,7 +20,7 @@ class Index extends Component {
                 <div>
                     <div className="header">
                     	<span className="span" onClick={this.props.isShow}></span>
-                    	<p>首页{this.props.count}</p>
+                    	<p>首页{this.props.nowStatus}</p>
                     </div>
                     <div>
                          {this.props.children}
@@ -36,14 +36,14 @@ class Index extends Component {
 
 function mapStateToProps(state){
     return {
-    	count:state.control.count
+    	nowStatus:state.nowStatus
     }
 }
 
 function mapDispatchToProps(dispatch){
     return {
     	isShow(value){
-    		dispatch(clickShow(value))
+    		dispatch(clickShow());
     	}
     }
 }

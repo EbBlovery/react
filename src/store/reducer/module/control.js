@@ -1,6 +1,6 @@
 
 var defaultState = {
-	count: 0
+	nowStatus: false
 }
 
 function reducer(state = defaultState, action){
@@ -8,9 +8,12 @@ function reducer(state = defaultState, action){
     switch (action.type) {
     	case 'CLICKCHANGE':
     	    var {value} = action.payload;
-    	    state.count += value;
+    	    state.nowStatus = !state.nowStatus;
+    	    console.log(state.nowStatus);
+    	    return state;
+    	    
         default:
-            return state;
+            return state.nowStatus;
     }
 }
 
