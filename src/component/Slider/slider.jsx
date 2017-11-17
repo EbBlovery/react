@@ -18,14 +18,14 @@ class Slider extends Component {
          return (
              <div className={showclass} >
              	<div className="info-bar">asdasd
-             		<img src={'../../static/logo.png'}/>
+             		<img src={require("../../static/logo.png")}/>
              	</div>
              	<div>
              		<ul>
              			<li>
              			    <Link to="/newsThub">
-             				    <img src="#" />
-             				    <p>aasdadasdasdasd</p>
+             				    <img src="../../static/logo.png" />
+             				    <p>首页</p>
              				</Link>
              			</li>
              		</ul>
