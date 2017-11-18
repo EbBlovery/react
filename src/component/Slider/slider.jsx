@@ -27,7 +27,6 @@ class Slider extends Component {
 		 	"show":this.props.isShow
 		 })
          const option = this.state
-         console.log(option)
          return (
              <div className={showclass} >
              	<div className="info-bar">
@@ -36,10 +35,10 @@ class Slider extends Component {
              	<div className="list">
              		<ul>
              			<li className="first-page">
-             			    <div onClick={this.props.isClose}>
+             			    <Link to="/" onClick={this.props.isClose}>
              				    <img src={require("../../static/logo.png")} />
              				    <p>首页</p>
-             				</div>
+             				</Link>
              			</li>
                         {
                             option.data.length>0 && option.data.map((item,index)=>{

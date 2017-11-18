@@ -18,9 +18,6 @@ class Index extends Component {
                     	<span className="span" onClick={this.props.isShow}></span>
                     	<p>首页</p>
                     </div>
-                    <div>
-                         {this.props.children}
-                    </div>
                 </div>
             	<div>
             		<Slider />

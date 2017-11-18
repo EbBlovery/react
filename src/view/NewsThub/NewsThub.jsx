@@ -9,6 +9,9 @@ class NewsThub extends Component {
 		return (
             <div>
             	<Index />
+            	<div>
+            		asdadas
+            	</div>
             </div>
 		)
 	}

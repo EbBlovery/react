@@ -5,7 +5,6 @@ var defaultState = {
 
 function reducer(state = defaultState, action){
     var state = Object.assign({},state);
-    console.log(action.type)
     switch (action.type) {
     	case 'CLICKCHANGE':
     	    var {value} = action.payload;
