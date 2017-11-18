@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Slider from '../Slider/slider';
@@ -8,9 +7,6 @@ import './index.less';
 import {clickShow} from '../../store/action/control';
 
 class Index extends Component {
-	constructor(props){
-         super(props)
-	}
 	handleShow(e){
          console.log(123123);
 	}
