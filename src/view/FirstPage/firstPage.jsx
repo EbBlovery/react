@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import Index from '../../component/Index/index';
 
+import './firstPage.less';
 
 class FirstPage extends Component {
 	constructor(props){
@@ -18,14 +20,19 @@ class FirstPage extends Component {
 	render(){
 
         return (
-             <div>
+             <div className="f-contain">
              	<Index />
-             	<div>
+             	<div className="f-contain-list">
              		<ul>
 	             		{
 	             			this.state.data.length>0 && this.state.data.map((item,index)=>{
 	             				return (
-	                                <li>{item.title}</li>
+	                                <li>
+	                                    <Link to="/">
+		                                    <img src={item.thumbnail} />
+		                                    <p>{item.title}</p>
+	                                    </Link>
+	                                </li>
 	             				)
 	             			})
 	             		}
