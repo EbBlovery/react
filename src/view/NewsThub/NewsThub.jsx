@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Index from '../../component/Index/index';
 
 class NewsThub extends Component {
 	constructor(props){
@@ -6,7 +7,9 @@ class NewsThub extends Component {
 	}
 	render() {
 		return (
-            <div>NewsThub</div>
+            <div>
+            	<Index />
+            </div>
 		)
 	}
 }
