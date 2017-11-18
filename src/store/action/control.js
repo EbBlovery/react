@@ -8,3 +8,11 @@ export function clickShow(){
     	})
     }
 }
+
+export function clickClose(){
+     return (dispatch) => {
+     	dispatch({
+     		type:'CLICKCLOSE',
+     	})
+     }
+}

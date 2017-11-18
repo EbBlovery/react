@@ -10,7 +10,7 @@ class RouterMap extends Component {
             <Router>
                 <div>
                     <Route exact path="/" component={Index} />
-                    <Route path="/newsThub" component={NewsThub} />
+                    <Route path="/newsThub/:id" component={NewsThub} />
                 </div>
             </Router>
 		)

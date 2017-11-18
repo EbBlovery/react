@@ -15,9 +15,31 @@
               margin-top:1rem;
          }
 	}
+	.list{
+	     ul{
+	         display:flex;
+	         width:100%;
+	         flex-direction: column;
+	         li a{
+	             display:flex;
+	             flex-direction: row;
+	             align-items:center;
+	             justify-content: flex-start;
+	             img{
+	                 width:2.5rem;
+	                 height:2.5rem;
+	                 border-radius:50%;
+	             }
+	             p{
+	                 font-size:1.2rem;
+	             }
+	         }
+	     }
+	}
 }
 
 .show{
 	transform:translateX(0px);
     opacity:1;
+    overflow-y:scroll;
 }

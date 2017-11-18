@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import axios from 'axios';
+import {clickClose} from '../../store/action/control';
+
+
 
 import './slider.less';
 
@@ -33,8 +36,8 @@ class Slider extends Component {
              	<div className="list">
              		<ul>
              			<li>
-             			    <Link to="/newsThub">
-             				    <img src="../../static/logo.png" />
+             			    <Link to="/" onClick={this.props.isClose}>
+             				    <img src={require("../../static/logo.png")} />
              				    <p>首页</p>
              				</Link>
              			</li>
@@ -67,4 +70,12 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps,null)(Slider);
+function mapDispatchToProps(){
+     return {
+        isClose(dispatch){
+            dispatch(clickClose())
+        }
+     }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Slider);
