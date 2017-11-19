@@ -66,10 +66,6 @@ class Slider extends Component {
 	}
 }
 
-class List extends Component {
-
-}
-
 function mapStateToProps(state){
     return {
     	isShow:state.control.nowStatus
