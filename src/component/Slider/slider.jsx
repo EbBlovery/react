@@ -58,7 +58,7 @@ class Slider extends Component {
                         </ul>
                     </div>
                 </div>
-                <div className="shadow">
+                <div onClick={this.props.isClose} className="shadow">
                     <Shadow />
                 </div>
              </div>
