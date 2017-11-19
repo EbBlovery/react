@@ -14,7 +14,7 @@ class NewsList extends Component {
          			this.props.data.length>0 && this.props.data.map((item,index)=>{
          				return (
                             <li key={index}>
-                                <Link to="/">
+                                <Link to={{pathname: "/newsDetail/" + item.id}}>
                                     <img className={(item.images || item.thumbnail)?'image':''} src={item.thumbnail || item.images } />
                                     <p>{item.title}</p>
                                 </Link>

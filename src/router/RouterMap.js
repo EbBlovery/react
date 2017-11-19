@@ -15,7 +15,7 @@ class RouterMap extends Component {
                         <Route exact path="/" component={FirstPage}/>
                         <Route path="/index" component={Index} />
                         <Route path="/newsThub/:id" component={NewsThub} />
-                        <Route path="newsDetail" comppnent={NewsDetail} />
+                        <Route path="/newsDetail/:detail" component={NewsDetail} />
                     </div>
                 </Switch>
             </Router>
