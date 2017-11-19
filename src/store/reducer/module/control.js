@@ -3,7 +3,7 @@ var defaultState = {
 	nowStatus: false
 }
 
-function reducer(state = defaultState, action){
+function control(state = defaultState, action){
     var state = Object.assign({},state);
     switch (action.type) {
     	case 'CLICKCHANGE':
@@ -18,4 +18,4 @@ function reducer(state = defaultState, action){
     }
 }
 
-export default reducer;
+export default control;

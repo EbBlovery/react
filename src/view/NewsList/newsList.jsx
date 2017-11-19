@@ -13,7 +13,7 @@ class NewsList extends Component {
          		{
          			this.props.data.length>0 && this.props.data.map((item,index)=>{
          				return (
-                            <li>
+                            <li key={index}>
                                 <Link to="/">
                                     <img className={(item.images || item.thumbnail)?'image':''} src={item.thumbnail || item.images } />
                                     <p>{item.title}</p>
