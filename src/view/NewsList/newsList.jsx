@@ -15,7 +15,7 @@ class NewsList extends Component {
          				return (
                             <li>
                                 <Link to="/">
-                                    <img src={item.thumbnail || item.images } />
+                                    <img className={(item.images || item.thumbnail)?'image':''} src={item.thumbnail || item.images } />
                                     <p>{item.title}</p>
                                 </Link>
                             </li>
