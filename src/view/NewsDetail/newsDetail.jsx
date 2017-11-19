@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 
+import './newsDetail.less';
 
 class NewsDetail extends Component {
 	constructor(props){
          super(props)
 	}
 	componentDidMount(){
-		console.log(this.props.match)
+
+	}
+	goToBack(){
+		this.props.history.goBack()
 	}
 	render(){
 		return (
-            <div>asdasdas</div>
+            <div>
+            	<div className="newsDetail">
+            	    <span onClick={this.goToBack.bind(this)} >back</span>
+            	</div>
+            	<div>
+            		
+            	</div>
+            </div>
 		)
 	}
 }

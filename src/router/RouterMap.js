@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
+import createHistory from 'history/createBrowserHistory'
+
 import Index from '../component/Index';
 import NewsThub from '../view/NewsThub/NewsThub';
 import FirstPage from '../view/FirstPage/firstPage'
 import NewsDetail from '../view/NewsDetail/newsDetail'
+
+var history = createHistory();
 
 class RouterMap extends Component {
 	render(){
