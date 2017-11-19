@@ -3,12 +3,12 @@ var defaultState = {
 }
 
 function newsList(state = defaultState,action){
-    var state = Object.assign({},state);
+    var states = Object.assign({},state);
     switch(action.type){
         case 'GETNEWSINFO':
-            state.data = action.payload.data;
+            states.data = action.payload.data;
         default :
-            return state
+            return states
     }
 }
 

@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import axios from 'axios';
 import {clickClose} from '../../store/action/control';
 
+import Shadow from '../Shadow/shadow';
 
 
 import './slider.less';
@@ -29,32 +30,37 @@ class Slider extends Component {
          const option = this.state
          return (
              <div className={showclass} >
-             	<div className="info-bar">
-             		<img src={require("../../static/logo.png")} alt="asda"/>
-             	</div>
-             	<div className="list">
-             		<ul>
-             			<li className="first-page">
-             			    <Link to="/" onClick={this.props.isClose}>
-             				    <img src={require("../../static/logo.png")} />
-             				    <p>首页</p>
-             				</Link>
-             			</li>
-                        {
-                            option.data.length>0 && option.data.map((item,index)=>{
-                                return (
-                                    <li key={index}>
-                                        <Link to={{pathname:'/newsThub/'+item.id,
-                                                   state: item.id}} onClick={this.props.isClose}>
-                                            <img src={item.thumbnail} />
-                                            <p>{item.name}</p>
-                                        </Link>
-                                    </li>
-                                )
-                            })
-                        }
-             		</ul>
-             	</div>
+                <div className="slider-bar">
+                    <div className="info-bar">
+                        <img src={require("../../static/logo.png")} alt="asda"/>
+                    </div>
+                    <div className="list">
+                        <ul>
+                            <li className="first-page">
+                                <Link to="/" onClick={this.props.isClose}>
+                                    <img src={require("../../static/logo.png")} />
+                                    <p>首页</p>
+                                </Link>
+                            </li>
+                            {
+                                option.data.length>0 && option.data.map((item,index)=>{
+                                    return (
+                                        <li key={index}>
+                                            <Link to={{pathname:'/newsThub/'+item.id,
+                                                       state: item.id}} onClick={this.props.isClose}>
+                                                <img src={item.thumbnail} />
+                                                <p>{item.name}</p>
+                                            </Link>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div className="shadow">
+                    <Shadow />
+                </div>
              </div>
          )
 	}

@@ -4,17 +4,17 @@ var defaultState = {
 }
 
 function control(state = defaultState, action){
-    var state = Object.assign({},state);
+    var states = Object.assign({},state);
     switch (action.type) {
     	case 'CLICKCHANGE':
     	    var {value} = action.payload;
-    	    state.nowStatus = !state.nowStatus;
-    	    return state;
+    	    states.nowStatus = !state.nowStatus;
+    	    return states;
         case 'CLICKCLOSE':
-            state.nowStatus = false;
-            return state;
+            states.nowStatus = false;
+            return states;
         default:
-            return state.nowStatus;
+            return states.nowStatus;
     }
 }
 
