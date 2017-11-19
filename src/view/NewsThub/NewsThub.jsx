@@ -4,6 +4,7 @@ import axios from 'axios';
 import Index from '../../component/Index/index';
 import NewsList from '../NewsList/newsList';
 
+import './newsThub.less';
 
 class NewsThub extends Component {
 	constructor(props){
@@ -17,7 +18,8 @@ class NewsThub extends Component {
 		console.log(this.props.match);
         axios.get(`/api/4/theme/${this.props.location.state}`).then(res=>{
         	const data = res.data.stories
-        	console.log(data);
+		console.log(data);
+
         	this.setState({data:data});
         })
 	}
@@ -26,9 +28,9 @@ class NewsThub extends Component {
 	}
 	render() {
 		return (
-            <div>
+            <div className="newsThub">
             	<Index />
-            	<div>
+            	<div className="newsThub-list">
             		<NewsList data={this.state.data}/>
             	</div>
             </div>
