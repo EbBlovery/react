@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import Index from '../../component/Index/index';
+import NewsList from '../NewsList/newsList';
 
 import './firstPage.less';
 
@@ -23,20 +24,7 @@ class FirstPage extends Component {
              <div className="f-contain">
              	<Index />
              	<div className="f-contain-list">
-             		<ul>
-	             		{
-	             			this.state.data.length>0 && this.state.data.map((item,index)=>{
-	             				return (
-	                                <li>
-	                                    <Link to="/">
-		                                    <img src={item.thumbnail} />
-		                                    <p>{item.title}</p>
-	                                    </Link>
-	                                </li>
-	             				)
-	             			})
-	             		}
-             		</ul>
+             		<NewsList data={this.state.data} />
              	</div>
              </div>
 
