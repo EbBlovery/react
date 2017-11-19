@@ -16,7 +16,7 @@ class NewsDetail extends Component {
 		return (
             <div>
             	<div className="newsDetail">
-            	    <span onClick={this.goToBack.bind(this)} >back</span>
+            	    <span onClick={this.goToBack.bind(this)} ><img src={require('../../static/back.svg')}/></span>
             	</div>
             	<div>
             		
