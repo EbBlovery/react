@@ -13,7 +13,7 @@ class RouterMap extends Component {
                     <div>
                         <Route exact path="/" component={FirstPage}/>
                         <Route path="/index" component={Index} />
-                        <Route path="/newsThub" component={NewsThub} />
+                        <Route path="/newsThub/:id" component={NewsThub} />
                     </div>
                 </Switch>
             </Router>

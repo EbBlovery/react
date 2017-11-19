@@ -1,4 +1,4 @@
-
+import axios from 'axios';
 
 export function clickShow(){
     return (dispatch) => {
@@ -14,5 +14,28 @@ export function clickClose(){
      	dispatch({
      		type:'CLICKCLOSE',
      	})
+     }
+}
+
+export function getNewsInfo(val){
+     return dispatch => {
+        axios.get(`/api/4/theme/${val}`)
+           .then(res=>{
+                console.log(res.data.stories)
+                dispatch(getNews(res.data.stories))
+           }).catch(err=>{
+                console.log(err)
+           })
+     }
+}
+
+export function getNews(data){
+     return dispatch => {
+         dispatch({
+            type:'GETNEWSINFO',
+            payload:{
+                data: data
+            }
+         })
      }
 }

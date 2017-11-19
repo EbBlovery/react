@@ -44,8 +44,7 @@ class Slider extends Component {
                             option.data.length>0 && option.data.map((item,index)=>{
                                 return (
                                     <li key={index}>
-                                        <Link to={{pathname:'/newsThub',
-                                                   search: '?id=' + item.id,
+                                        <Link to={{pathname:'/newsThub/'+item.id,
                                                    state: item.id}} onClick={this.props.isClose}>
                                             <img src={item.thumbnail} />
                                             <p>{item.name}</p>

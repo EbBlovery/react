@@ -9,7 +9,6 @@ function reducer(state = defaultState, action){
     	case 'CLICKCHANGE':
     	    var {value} = action.payload;
     	    state.nowStatus = !state.nowStatus;
-    	    console.log(state.nowStatus);
     	    return state;
         case 'CLICKCLOSE':
             state.nowStatus = false;
