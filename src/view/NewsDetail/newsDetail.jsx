@@ -7,7 +7,7 @@ class NewsDetail extends Component {
          super(props)
 	}
 	componentDidMount(){
-
+        console.log(this.props.location)
 	}
 	goToBack(){
 		this.props.history.goBack()
@@ -17,6 +17,7 @@ class NewsDetail extends Component {
             <div>
             	<div className="newsDetail">
             	    <span onClick={this.goToBack.bind(this)} ><img src={require('../../static/back.svg')}/></span>
+            	    <p>{this.props.location.state}</p>
             	</div>
             	<div>
             		
