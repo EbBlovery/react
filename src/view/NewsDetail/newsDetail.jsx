@@ -18,10 +18,7 @@ class NewsDetail extends Component {
              this.setState({
              	data: h
              })
-         document.getElementById('contents').innerHTML=h + c;
-         // document.head.appendChild(c);
-         console.log()
-
+	         document.getElementById('contents').innerHTML=h + c;
          })
 	}
 	goToBack(){
