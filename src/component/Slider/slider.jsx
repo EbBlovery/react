@@ -47,7 +47,7 @@ class Slider extends Component {
                                     return (
                                         <li key={index}>
                                             <Link to={{pathname:'/newsThub/'+item.id,
-                                                       state: item.id}} onClick={this.props.isClose}>
+                                                       state:{id: item.id,thub:item.thumbnail}}} onClick={this.props.isClose}>
                                                 <img src={item.thumbnail} />
                                                 <p>{item.name}</p>
                                             </Link>

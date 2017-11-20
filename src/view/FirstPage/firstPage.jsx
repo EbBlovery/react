@@ -24,13 +24,14 @@ class FirstPage extends Component {
         this.t++;
     	var time = getTime(this.t);
     	axios.get(`/api/4/news/before/${time}`).then(res=>{
-    		var arr = []
     		var datas = res.data.stories;
     		var val = this.state.data;
-    		arr.push([...val,...datas]);
+    		datas.unshift(...val)
     		this.setState({
-    			data:arr
+    			data:datas
     		})
+    	}).catch(err=>{
+    		console.log(err)
     	})
     }
 	render(){
@@ -40,7 +41,9 @@ class FirstPage extends Component {
              	<div className="f-contain-list">
              		<NewsList data={this.state.data} />
              	</div>
-             	<div onClick={this.getMore.bind(this)}>loading more</div>
+             	<div className="loadMore" onClick={this.getMore.bind(this)}>
+             	    <p>loading more...</p>
+             	</div>
              </div>
         )
 	}

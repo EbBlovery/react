@@ -31,6 +31,7 @@ class NewsThub extends Component {
             <div className="newsThub">
             	<Index />
             	<div className="newsThub-list">
+            	    <div className="thub"><img src={this.props.location.state.thub} /></div>
             		<NewsList data={this.props.data} />
             	</div>
             </div>
