@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Index from '../../component/Index/index';
 import NewsList from '../NewsList/newsList';
+import Wheel from '../Wheel/wheel';
 
 import { getTime } from '../../util/getTime';
 
@@ -35,10 +36,12 @@ class FirstPage extends Component {
     	})
     }
 	render(){
+        var name = '首页'
         return (
              <div className="f-contain">
-             	<Index />
+             	<Index name={name}/>
              	<div className="f-contain-list">
+                    <Wheel />
              		<NewsList data={this.state.data} />
              	</div>
              	<div className="loadMore" onClick={this.getMore.bind(this)}>

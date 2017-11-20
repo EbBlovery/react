@@ -29,7 +29,7 @@ class NewsThub extends Component {
 	render() {
 		return (
             <div className="newsThub">
-            	<Index />
+            	<Index name={this.props.location.state.name}/>
             	<div className="newsThub-list">
             	    <div className="thub"><img src={this.props.location.state.thub} /></div>
             		<NewsList data={this.props.data} />

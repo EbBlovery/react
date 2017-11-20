@@ -16,7 +16,7 @@ class Index extends Component {
                 <div>
                     <div className="header">
                     	<span className="span" onClick={this.props.isShow}></span>
-                    	<p>首页</p>
+                    	<p>{this.props.name}</p>
                     </div>
                 </div>
             	<div>

@@ -37,7 +37,10 @@ class Slider extends Component {
                     <div className="list">
                         <ul>
                             <li className="first-page">
-                                <Link to="/" onClick={this.props.isClose}>
+                                <Link to={{
+                                    pathname:'/',
+                                    state:{name:'首页'}
+                                }} onClick={this.props.isClose}>
                                     <img src={require("../../static/logo.png")} />
                                     <p>首页</p>
                                 </Link>
@@ -47,7 +50,7 @@ class Slider extends Component {
                                     return (
                                         <li key={index}>
                                             <Link to={{pathname:'/newsThub/'+item.id,
-                                                       state:{id: item.id,thub:item.thumbnail}}} onClick={this.props.isClose}>
+                                                       state:{id: item.id,thub:item.thumbnail,name:item.name}}} onClick={this.props.isClose}>
                                                 <img src={item.thumbnail || require("../../static/logo.png")} />
                                                 <p>{item.name}</p>
                                             </Link>
