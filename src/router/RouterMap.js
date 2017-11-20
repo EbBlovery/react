@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
-import createHistory from 'history/createBrowserHistory'
-
 import Index from '../component/Index';
 import NewsThub from '../view/NewsThub/NewsThub';
-import FirstPage from '../view/FirstPage/firstPage'
-import NewsDetail from '../view/NewsDetail/newsDetail'
+import FirstPage from '../view/FirstPage/firstPage';
+import NewsDetail from '../view/NewsDetail/newsDetail';
 
-var history = createHistory();
 
 class RouterMap extends Component {
 	render(){
 		return (
             <Router>
                 <Switch>
-                    <div>
-                        <Route exact path="/" component={FirstPage}/>
-                        <Route path="/index" component={Index} />
-                        <Route path="/newsThub/:id" component={NewsThub} />
-                        <Route path="/newsDetail/:detail" component={NewsDetail} />
-                    </div>
+                    <Route exact path="/" component={FirstPage}/>
+                    <Route path="/index" component={Index} />
+                    <Route path="/newsThub/:id" component={NewsThub} />
+                    <Route path="/newsDetail/:detail" component={NewsDetail} />
                 </Switch>
             </Router>
 		)

@@ -23,8 +23,8 @@ class NewsThub extends Component {
   //       })
 	}
 	componentDidUpdate(){
-		const match = this.props.match;
-        this.props.getNewsInfo(match.params.id)
+		const matchs = this.props.match;
+        this.props.getNewsInfo(matchs.params.id)
 	}
 	render() {
 		return (
