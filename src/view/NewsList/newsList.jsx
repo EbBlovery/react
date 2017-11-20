@@ -7,15 +7,18 @@ class NewsList extends Component {
 	constructor(props){
 		super(props)
 	}
+	componentDidMount(){
+
+	}
 	render(){
 		return (
             <ul className="mainList">
          		{
          			this.props.data.length>0 && this.props.data.map((item,index)=>{
          				return (
-                            <li key={index}>
+                            <li key={index} >
                                 <Link key={index} to={{pathname: "/newsDetail/" + item.id,
-                                           state: item.title
+                                           state: {title:item.title,id:item.id}
                                           }}>
                                     <img className={(item.images || item.thumbnail)?'image':''} src={item.thumbnail || item.images } />
                                     <p>{item.title}</p>
