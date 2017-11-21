@@ -12,13 +12,15 @@ import './firstPage.less';
 class FirstPage extends Component {
 	constructor(props){
 		super(props)
-		this.state = {data:[]}
+		this.state = {data:[],images:[]}
 		this.t = 0;
 	}
     componentDidMount(){
         axios.get('/api/4/news/latest').then(res=>{
         	const data = res.data.stories
-        	this.setState({data:data})
+            const images = res.data.top_stories
+            console.log(res)
+        	this.setState({data:data,images:images})
         })
     }
     getMore(){
@@ -40,8 +42,10 @@ class FirstPage extends Component {
         return (
              <div className="f-contain">
              	<Index name={name}/>
+                <div className="f-wheel">
+                    <Wheel images={this.state.images}/>
+                </div>
              	<div className="f-contain-list">
-                    <Wheel />
              		<NewsList data={this.state.data} />
              	</div>
              	<div className="loadMore" onClick={this.getMore.bind(this)}>
