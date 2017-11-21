@@ -7,15 +7,23 @@ import './index.less';
 import {clickShow} from '../../store/action/control';
 
 class Index extends Component {
-	handleShow(e){
-         console.log(123123);
+    constructor(props){
+        super(props)
+        this.state = {isTrue: false}
+    }
+	handleShow(){
+         this.setState({isTrue: !this.state.isTrue})
 	}
 	render(){
+        var style = {
+            transform:'rotate(90deg)'
+        }
+        console.log(this.state.isTrue)
 		return (
             <div>
                 <div>
                     <div className="header">
-                    	<span className="span" onClick={this.props.isShow}></span>
+                    	<span className="span" onClick={this.props.isShow} onClick={this.handleShow.bind(this)}></span>
                     	<p>{this.props.name}</p>
                     </div>
                 </div>

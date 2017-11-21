@@ -18,7 +18,6 @@ class Wheel extends Component {
         if(this.i>4) this.i = 0;
         var len = -((p.width.split('px')[0])/5)*this.i;
         this.setState({val: len})
-        console.log(len)
 
 	}
 	componentWillUnmount(){
