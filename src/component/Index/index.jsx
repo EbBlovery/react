@@ -9,21 +9,21 @@ import {clickShow} from '../../store/action/control';
 class Index extends Component {
     constructor(props){
         super(props)
-        this.state = {isTrue: false}
     }
-	handleShow(){
-         this.setState({isTrue: !this.state.isTrue})
-	}
 	render(){
-        var style = {
-            transform:'rotate(90deg)'
+        var style;
+        if(this.props.nowStatus){
+            style = {
+                transform:'rotate(90deg)'
+            }
+        }else{
+            style = {}
         }
-        console.log(this.state.isTrue)
 		return (
             <div>
                 <div>
                     <div className="header">
-                    	<span className="span" onClick={this.props.isShow} onClick={this.handleShow.bind(this)}></span>
+                    	<span style={style} className="span" onClick={this.props.isShow}></span>
                     	<p>{this.props.name}</p>
                     </div>
                 </div>
