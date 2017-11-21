@@ -5,16 +5,24 @@ import './wheel.less';
 class Wheel extends Component {
 	constructor(props){
 		super(props)
-		this.state = {val:0,}
+		this.state = {val:0}
 		this.starts = this.starts.bind(this)
+		this.i = 0;
 	}
 	componentDidMount(){
-		setInterval(this.starts,3000)
+		this.inter = setInterval(this.starts,3000)
 	}
 	starts(){
-        const p = window.getComputedStyle((this.imgl),null);
-        const len = p.width;
+        var p = window.getComputedStyle((this.imgl),null);
+        this.i++
+        if(this.i>4) this.i = 0;
+        var len = -((p.width.split('px')[0])/5)*this.i;
+        this.setState({val: len})
         console.log(len)
+
+	}
+	componentWillUnmount(){
+         clearInterval(this.inter)
 	}
 	render(){
 		var style={
