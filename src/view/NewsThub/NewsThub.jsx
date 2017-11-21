@@ -9,9 +9,6 @@ import { getNewsInfo } from '../../store/action/control';
 import './newsThub.less';
 
 class NewsThub extends Component {
-	constructor(props){
-		super(props)
-	}
 	componentDidMount(){
         const match = this.props.match;
         this.props.getNewsInfo(match.params.id)
@@ -31,7 +28,7 @@ class NewsThub extends Component {
             <div className="newsThub">
             	<Index name={this.props.location.state.name}/>
             	<div className="newsThub-list">
-            	    <div className="thub"><img src={this.props.location.state.thub} /></div>
+            	    <div className="thub"><img src={this.props.location.state.thub} alt={this.props.data}/></div>
             		<NewsList data={this.props.data} />
             	</div>
             </div>

@@ -4,12 +4,6 @@ import { Link } from 'react-router-dom';
 import './newsList.less';
 
 class NewsList extends Component {
-	constructor(props){
-		super(props)
-	}
-	componentDidMount(){
-
-	}
 	render(){
 		return (
             <ul className="mainList">
@@ -20,7 +14,7 @@ class NewsList extends Component {
                                 <Link key={index} to={{pathname: "/newsDetail/" + item.id,
                                            state: {title:item.title,id:item.id}
                                           }}>
-                                    <img className={(item.images || item.thumbnail)?'image':''} src={item.thumbnail || item.images } />
+                                    <img className={(item.images || item.thumbnail)?'image':''} src={item.thumbnail || item.images } alt={item.title}/>
                                     <p>{item.title}</p>
                                 </Link>
                             </li>

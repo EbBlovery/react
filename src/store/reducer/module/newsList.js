@@ -7,6 +7,7 @@ function newsList(state = defaultState,action){
     switch(action.type){
         case 'GETNEWSINFO':
             states.data = action.payload.data
+            break;
         default :
             return states
     }

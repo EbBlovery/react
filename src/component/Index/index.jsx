@@ -7,9 +7,6 @@ import './index.less';
 import {clickShow} from '../../store/action/control';
 
 class Index extends Component {
-    constructor(props){
-        super(props)
-    }
 	render(){
         var style;
         if(this.props.nowStatus){
