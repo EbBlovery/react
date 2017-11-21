@@ -19,7 +19,6 @@ class FirstPage extends Component {
         axios.get('/api/4/news/latest').then(res=>{
         	const data = res.data.stories
             const images = res.data.top_stories
-            console.log(res)
         	this.setState({data:data,images:images})
         })
     }

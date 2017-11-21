@@ -3,12 +3,25 @@ import React, { Component } from 'react';
 import './wheel.less';
 
 class Wheel extends Component {
+	constructor(props){
+		super(props)
+		this.state = {val:0,}
+		this.starts = this.starts.bind(this)
+	}
+	componentDidMount(){
+		setInterval(this.starts,3000)
+	}
+	starts(){
+        const p = window.getComputedStyle((this.imgl),null);
+        const len = p.width;
+        console.log(len)
+	}
 	render(){
 		var style={
-			transform:"translateX(-50px)"
+			transform:`translateX(${this.state.val}px)`
 		}
 		return (
-            <ul style={style} className="wheel">
+            <ul style={style} ref={(val) => { this.imgl = val; } } className="wheel">
                  {
                  	this.props.images.map((item,index)=>{
                  		return (
