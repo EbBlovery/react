@@ -16,7 +16,7 @@ class FirstPage extends Component {
 		this.t = 0;
 	}
     componentDidMount(){
-        axios.get('/api/4/news/latest').then(res=>{
+        axios.get('http://59.110.241.135:9999/api/4/news/latest').then(res=>{
         	const data = res.data.stories
             const images = res.data.top_stories
         	this.setState({data:data,images:images})
@@ -25,7 +25,7 @@ class FirstPage extends Component {
     getMore(){
         this.t++;
     	var time = getTime(this.t);
-    	axios.get(`/api/4/news/before/${time}`).then(res=>{
+    	axios.get(`http://59.110.241.135:9999/api/4/news/before/${time}`).then(res=>{
     		var datas = res.data.stories;
     		var val = this.state.data;
     		datas.unshift(...val)

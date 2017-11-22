@@ -9,7 +9,7 @@ class NewsDetail extends Component {
          this.state = {data: 'loading...' }
 	}
 	componentDidMount(){
-         axios.get(`/api/4/news/${this.props.location.state.id}`).then(res=>{
+         axios.get(`http://59.110.241.135:9999/api/4/news/${this.props.location.state.id}`).then(res=>{
          	 var css = res.data.css
          	 var c = css.map(item=>{
          	 	return `<link href="${item}" rel="stylesheet" />`

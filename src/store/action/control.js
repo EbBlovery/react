@@ -19,7 +19,7 @@ export function clickClose(){
 
 export function getNewsInfo(val){
      return dispatch => {
-        axios.get(`/api/4/theme/${val}`)
+        axios.get(`http://59.110.241.135:9999/api/4/theme/${val}`)
            .then(res=>{
                 dispatch(getNews(res.data.stories))
            }).catch(err=>{

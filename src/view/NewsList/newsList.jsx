@@ -14,7 +14,7 @@ class NewsList extends Component {
                                 <Link key={index} to={{pathname: "/newsDetail/" + item.id,
                                            state: {title:item.title,id:item.id}
                                           }}>
-                                    <img className={(item.images || item.thumbnail)?'image':''} src={item.thumbnail || item.images } alt={item.title}/>
+                                    <img className={(item.images || item.thumbnail)?'image':''} src={item.thumbnail || item.images } alt=""/>
                                     <p>{item.title}</p>
                                 </Link>
                             </li>

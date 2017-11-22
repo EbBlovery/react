@@ -86,11 +86,11 @@ module.exports = function(proxy, allowedHost) {
     },
     public: allowedHost,
     proxy:{
-      '/api':{
-         target: 'http://news-at.zhihu.com/',
-         secure: false,
-         changeOrigin: true
-      }
+      // '/api':{
+      //    target: 'http://news-at.zhihu.com/',
+      //    secure: false,
+      //    changeOrigin: true
+      // }
     },
     before(app) {
       // This lets us open files from the runtime error overlay.
